@@ -1,0 +1,17 @@
+zookeeper: bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+kafka: bin\windows\kafka-server-start.bat config\server.properties
+
+kafka-client: 
+	bin\windows\kafka-console-consumer.bat --bootstrap-server 127.0.0.1:9092 --topic JULIA --from-beginning
+	bin\windows\kafka-console-consumer.bat --bootstrap-server 127.0.0.1:9092 --topic TIA --from-beginning
+
+
+etcd: etcd.exe
+
+etcdctl:
+	1.SET ETCDCTL_API=3 
+	2.etcdctl.exe --endpoints=http://127.0.0.1:2379 put 
+
+
+https://www.zhihu.com/search?type=content&q=go%20kafka
